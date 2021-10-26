@@ -40,5 +40,16 @@ export class Step04AppsyncDynamodbStack extends cdk.Stack {
     new cdk.CfnOutput(this, "StackRegion", {
       value: this.region,
     });
+
+    // Lambda fro creating lambda function
+    const todosLambda = new lambda.Function(this, "AppSyncTodosHandler", {
+      runtime: lambda.Runtime.NODEJS_12_X,
+      handler: "main.handler",
+      code: lambda.Code.fromAsset("lambda"),
+      memorySize: 1024,
+    });
+
+    // Define lambda as datasource
+    const lambdaDs = api.addLambdaDataSource("lambdaDataSource", todosLambda);
   }
 }
