@@ -27,5 +27,18 @@ export class Step04AppsyncDynamodbStack extends cdk.Stack {
       },
       xrayEnabled: true,
     });
+
+    // Print GraphAL API URL, key and region on console after deploy
+    new cdk.CfnOutput(this, "ApiURl", {
+      value: api.graphqlUrl,
+    });
+
+    new cdk.CfnOutput(this, "ApiKey", {
+      value: api.apiKey || "",
+    });
+
+    new cdk.CfnOutput(this, "StackRegion", {
+      value: this.region,
+    });
   }
 }
