@@ -51,5 +51,26 @@ export class Step04AppsyncDynamodbStack extends cdk.Stack {
 
     // Define lambda as datasource
     const lambdaDs = api.addLambdaDataSource("lambdaDataSource", todosLambda);
+
+    // Resolvers to intract with graphQL APi
+    lambdaDs.createResolver({
+      typeName: "Query",
+      fieldName: "getTodos",
+    });
+
+    lambdaDs.createResolver({
+      typeName: "Mutation",
+      fieldName: "addTodo",
+    });
+
+    lambdaDs.createResolver({
+      typeName: "Mutation",
+      fieldName: "deleteTodo",
+    });
+
+    lambdaDs.createResolver({
+      typeName: "Mutation",
+      fieldName: "updateTodo",
+    });
   }
 }
