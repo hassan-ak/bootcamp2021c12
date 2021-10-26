@@ -72,5 +72,19 @@ export class Step04AppsyncDynamodbStack extends cdk.Stack {
       typeName: "Mutation",
       fieldName: "updateTodo",
     });
+
+    // Create a DynamoDB table
+    const todosTable = new ddb.Table(this, "TodosTable", {
+      partitionKey: {
+        name: "id",
+        type: ddb.AttributeType.STRING,
+      },
+    });
+
+    // grant table access to lambda function
+    todosTable.grantFullAccess(todosLambda);
+
+    // add table name to environment
+    todosLambda.addEnvironment("TODOS_TABLE", todosTable.tableName);
   }
 }
