@@ -1,6 +1,7 @@
-# bootcamp2021c12 - Integrate API Gateway and AppSync with Lambda and DynamoDB
+# bootcamp2021c12 - Introduction to Serverless and Cloud Computing using CDK - Integrate API Gateway and AppSync with Lambda and DynamoDB - Integrate AppSync with Lambda with DynamoDB
 
 ## Integrate AppSync with Lambda with DynamoDB
+- Connect DynamoDB with lambda functions & AppSync API
 
 ### Class Notes :-
 
@@ -25,7 +26,7 @@ DynamoDB is a basic database provided by AWS having tables, items and attributes
 - [Local Mocking and Testing with the Amplify CLI](https://aws.amazon.com/blogs/aws/new-local-mocking-and-testing-with-the-amplify-cli/)
 - [aws-dynamodb module](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-dynamodb-readme.html)
 
-### Class 12 Videos:
+### Class 12 Videos: Integrate AppSync with Lambda with DynamoDB
 
 - [English YouTube](https://www.youtube.com/watch?v=m1ufBAiW4DU&ab_channel=CertifiedUnicornDeveloper)
 - [English Facebook](https://www.facebook.com/fb.anees.ahmed/videos/624498375622116)
